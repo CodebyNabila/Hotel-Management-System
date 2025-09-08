@@ -1,0 +1,27 @@
+
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: hoteldb
+      POSTGRES_USER: hoteluser
+      POSTGRES_PASSWORD: hotelpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hoteldb
+      SPRING_DATASOURCE_USERNAME: hoteluser
+      SPRING_DATASOURCE_PASSWORD: hotelpass
+
+volumes:
+  pgdata:
