@@ -1,42 +1,28 @@
+# HOTEL MANAGEMENT SYSTEM
 
-# Hotel Management System (Full Stack)
+A full-stack Hotel Management System built with React (frontend), Spring Boot (backend), and H2 database.
+This project demonstrates CRUD operations, user-friendly UI, and interactive dashboards to manage hotel rooms and customer bookings efficiently.
 
-## Overview
-This repo contains:
-- `backend` — Spring Boot REST API (Java, JPA). Uses H2 in-memory DB by default.
-- `frontend` — React single page app (create-react-app style).
+# Features
 
-## Run locally (development)
+Room Management: Add, view, update, and delete rooms (CRUD).
 
-### 1) Backend
-Open terminal in `backend/`:
+Booking System: Book rooms, track check-in and check-out dates.
 
-```bash
-# build & run (requires Maven and Java 17+)
-mvn spring-boot:run
-```
+Customer Management: Add and view customer records.
 
-This starts backend on `http://localhost:8080`.
-H2 console: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:hoteldb`)
+Dashboard: Interactive stats cards (Total Rooms, Available, Booked) and room grid.
 
-### 2) Frontend
-Open another terminal in `frontend/`:
+Frontend Animations: Smooth animations using AOS library for better user experience.
 
-```bash
-npm install
-npm start
-```
+Data Persistence: H2 database stores all rooms and customer data.
 
-This starts frontend on `http://localhost:3000` and it calls the backend at port 8080.
+# Technologies Used
 
-## Run with Docker+Postgres (production-like)
-Adjust backend configuration to use Postgres and add Postgres dependency, then:
+Frontend: React, HTML, CSS, JavaScript, AOS animations
 
-```bash
-docker-compose up --build
-```
+Backend: Spring Boot (Java)
 
-## Notes
-- The backend initializes 60 rooms (numbers 1..60) following your original mapping.
-- Menu items and prices follow your original values.
-- For production use, replace H2 with PostgreSQL/MySQL and enable security/authentication.
+Database: H2 Database
+
+Version Control: Git & GitHub
